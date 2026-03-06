@@ -1934,6 +1934,63 @@ MonoBehaviour:
   <EnemyPrefab>k__BackingField: {fileID: 8753514820508166313, guid: 259c43bc87bdf214686f2ffd9f00d605, type: 3}
   <MinCount>k__BackingField: 30
   <MaxCount>k__BackingField: 50
+--- !u!1001 &7123105294343356802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1987831080427140889, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_Name
+      value: Energy Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82675d0f687807f429386b38c34deb18, type: 3}
 --- !u!1001 &7206462929538069534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1944,7 +2001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4174320177194832814, guid: 5262f71742c4bfd448ede99795a3184e, type: 3}
       propertyPath: m_Name
-      value: Tower (Tier 1)
+      value: Crystal Tower
       objectReference: {fileID: 0}
     - target: {fileID: 6627844365232015856, guid: 5262f71742c4bfd448ede99795a3184e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2005,3 +2062,4 @@ SceneRoots:
   - {fileID: 1553947160}
   - {fileID: 1155434714}
   - {fileID: 7206462929538069534}
+  - {fileID: 7123105294343356802}

@@ -1,15 +1,22 @@
 using UnityEngine;
 
-public class CannonShellController : MonoBehaviour
+public class CrystalProjectileController : MonoBehaviour
 {
+    [Header("Projectile Settings")]
+
     [SerializeField]
     private float _speed = 5f;
 
     [SerializeField]
     private float _lifeTime = 10f;
 
+    [Header("Target Settings")]
+
     [SerializeField]
     private Transform _target;
+
+    [SerializeField]
+    private string _enemyTag = "Enemy";
 
     public void SetTarget(Transform target)
     {
@@ -34,7 +41,7 @@ public class CannonShellController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Enemy"))
+        if (!other.CompareTag(_enemyTag))
             return;
 
         Destroy(gameObject);
