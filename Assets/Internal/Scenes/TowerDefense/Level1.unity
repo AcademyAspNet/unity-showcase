@@ -1070,14 +1070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60a413888373714c9106a827037645e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCameraController
-  _movementSpeed: 20
-  _rotationSpeed: 100
-  _heightChangeSpeed: 15
-  _minCameraHeight: 5
-  _maxCameraHeight: 50
-  _moveAction: {fileID: 0}
-  _rotateAction: {fileID: 0}
-  _changeHeightAction: {fileID: 0}
 --- !u!1 &1035108342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1373,7 @@ MonoBehaviour:
   _startWaypoints:
   - {fileID: 575885492}
   _enemyParentObject: {fileID: 1553947159}
-  _timeBeforeFirstWave: 5
+  _timeBeforeFirstWave: 0
   _intervalBetweenWaves: 15
   _onAllEnemyWavesFinished:
     m_PersistentCalls:
@@ -1885,8 +1877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupConfiguration
   <EnemyPrefab>k__BackingField: {fileID: 8753514820508166313, guid: 259c43bc87bdf214686f2ffd9f00d605, type: 3}
-  <MinCount>k__BackingField: 5
-  <MaxCount>k__BackingField: 10
+  <MinCount>k__BackingField: 1000
+  <MaxCount>k__BackingField: 1000
 --- !u!1 &2127475123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,6 +1926,67 @@ MonoBehaviour:
   <EnemyPrefab>k__BackingField: {fileID: 8753514820508166313, guid: 259c43bc87bdf214686f2ffd9f00d605, type: 3}
   <MinCount>k__BackingField: 30
   <MaxCount>k__BackingField: 50
+--- !u!1001 &6244219230103203702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 194229851461769909, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_Name
+      value: AntiAircraftGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 194229851461769909, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362732138924366971, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f79ade27ec1bb354981c5662d0b53baf, type: 3}
 --- !u!1001 &7123105294343356802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1945,6 +1998,10 @@ PrefabInstance:
     - target: {fileID: 1987831080427140889, guid: 82675d0f687807f429386b38c34deb18, type: 3}
       propertyPath: m_Name
       value: Energy Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987831080427140889, guid: 82675d0f687807f429386b38c34deb18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6803054748690940449, guid: 82675d0f687807f429386b38c34deb18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2009,7 +2066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627844365232015856, guid: 5262f71742c4bfd448ede99795a3184e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 6627844365232015856, guid: 5262f71742c4bfd448ede99795a3184e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2063,3 +2120,4 @@ SceneRoots:
   - {fileID: 1155434714}
   - {fileID: 7206462929538069534}
   - {fileID: 7123105294343356802}
+  - {fileID: 6244219230103203702}

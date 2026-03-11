@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -31,5 +32,15 @@ public class MainMenuController : MonoBehaviour
     public void ExitGame()
     {
         _canvasAnimator.SetTrigger(_exitGameTriggerName);
+    }
+
+    public void SwitchToFirstLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void CloseApplication()
+    {
+        Application.Quit();
     }
 }
