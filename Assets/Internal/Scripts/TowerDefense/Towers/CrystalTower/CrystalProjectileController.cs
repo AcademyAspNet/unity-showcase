@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CrystalProjectileController : MonoBehaviour
@@ -10,13 +12,16 @@ public class CrystalProjectileController : MonoBehaviour
     [SerializeField]
     private float _lifeTime = 10f;
 
+    [SerializeField]
+    private float _damage = 25;
+
     [Header("Target Settings")]
 
     [SerializeField]
     private Transform _target;
 
     [SerializeField]
-    private string _enemyTag = "Enemy";
+    private List<string> _enemyTags = new() { "Enemy" };
 
     public void SetTarget(Transform target)
     {
@@ -41,9 +46,26 @@ public class CrystalProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(_enemyTag))
+        if (!IsValidTarget(other))
             return;
 
+        if (!other.TryGetComponent<DestroyableEntity>(out DestroyableEntity entity))
+            return;
+
+        if (entity.IsAlive())
+            entity.TakeDamage(_damage);
+
         Destroy(gameObject);
+    }
+
+    private bool IsValidTarget(Collider other)
+    {
+        foreach (string enemyTag in _enemyTags)
+        {
+            if (other.CompareTag(enemyTag))
+                return true;
+        }
+
+        return false;
     }
 }

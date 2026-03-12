@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class EnergyTowerController : BaseTowerController
 {
+    [Header("Attack Settings")]
+
+    [SerializeField]
+    private float _damagePerSecond = 5;
+
     [Header("Energy Line Settings")]
 
     [SerializeField]
@@ -18,6 +23,11 @@ public class EnergyTowerController : BaseTowerController
 
     private LineRenderer _lineRenderer;
     private GameObject _energyLineObject;
+
+    [Header("Animator Settings")]
+
+    [SerializeField]
+    private string _attackingAnimatorBoolName = "Attacking";
 
     private void Start()
     {
@@ -57,7 +67,10 @@ public class EnergyTowerController : BaseTowerController
         if (target == null)
         {
             if (_lineRenderer.enabled)
+            {
                 _lineRenderer.enabled = false;
+                GetAnimator().SetBool(_attackingAnimatorBoolName, false);
+            }
 
             return;
         }
@@ -66,6 +79,17 @@ public class EnergyTowerController : BaseTowerController
         _lineRenderer.SetPosition(1, target.transform.position);
 
         if (!_lineRenderer.enabled)
+        {
             _lineRenderer.enabled = true;
+            GetAnimator().SetBool(_attackingAnimatorBoolName, true);
+        }
+
+        AttackTarget(target);
+    }
+
+    private void AttackTarget(GameObject target)
+    {
+        float damageForThisTick = _damagePerSecond * Time.deltaTime;
+        Attack(target, damageForThisTick);
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -92,6 +93,7 @@ public abstract class BaseTowerController : MonoBehaviour
         Vector3 towerPosition = transform.position;
 
         return _targets
+            .Where(target => target != null)
             .OrderBy(target => Vector3.Distance(towerPosition, target.transform.position))
             .FirstOrDefault();
     }
@@ -139,5 +141,21 @@ public abstract class BaseTowerController : MonoBehaviour
                 return true;
 
         return false;
+    }
+
+    protected static bool Attack(GameObject target, float damage)
+    {
+        if (target == null)
+            return false;
+
+        if (!target.TryGetComponent<DestroyableEntity>(out DestroyableEntity entity))
+            return false;
+
+        if (!entity.IsAlive())
+            return false;
+
+        entity.TakeDamage(damage);
+
+        return true;
     }
 }
