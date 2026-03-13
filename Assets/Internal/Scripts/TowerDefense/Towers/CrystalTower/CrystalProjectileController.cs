@@ -49,7 +49,7 @@ public class CrystalProjectileController : MonoBehaviour
         if (!IsValidTarget(other))
             return;
 
-        if (!other.TryGetComponent<DestroyableEntity>(out DestroyableEntity entity))
+        if (!other.TryGetComponent(out DestroyableEntity entity))
             return;
 
         if (entity.IsAlive())

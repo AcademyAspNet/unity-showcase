@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CanonShellController
   _speed: 5
   _lifeTime: 100
-  _damage: 10
+  _damage: 75
   _target: {fileID: 0}
   _enemyTags:
   - Enemy
