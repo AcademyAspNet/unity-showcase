@@ -35,6 +35,12 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadSceneAsync(sceneIndex));
     }
 
+    public void ReloadLevel()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        LoadLevel(activeScene.buildIndex);
+    }
+
     private void Start()
     {
         _loadingScreen.SetActive(false);

@@ -1,7 +1,6 @@
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
-public class DestroyableEntity : MonoBehaviour
+public class DestroyableEntity : Entity
 {
     [Header("Health Settings")]
 
@@ -45,6 +44,11 @@ public class DestroyableEntity : MonoBehaviour
         _isAlive = clampedHealth > 0;
 
         return true;
+    }
+
+    public float GetMaxHealth()
+    {
+        return _maxHealth;
     }
 
     public bool IsAlive()

@@ -6,6 +6,11 @@ using UnityEngine.Events;
 // Когда враг заходит в эту зону, он считается дошедшим до цели.
 public class EnemyFinishTrigger : MonoBehaviour
 {
+    [Header("Castle Settings")]
+
+    [SerializeField]
+    private DestroyableEntity _castle;
+
     // Список тегов, которые считаем врагами.
     // По умолчанию здесь тег "Enemy", но можно добавить "Boss", "FastEnemy" и т.д.
     // Это нужно, чтобы разные типы врагов могли доходить до финиша.
@@ -40,6 +45,8 @@ public class EnemyFinishTrigger : MonoBehaviour
             // 1. Запускаем все связанные события (играем звук и т.д.)
             _onEnemyReachedFinish?.Invoke(); // ?. - защита от ошибок если событие пустое
 
+            TryToApplyDamageToCastle(other.gameObject);
+
             // 2. Уничтожаем врага, чтобы он не копился на сцене
             Destroy(other.gameObject);
 
@@ -50,5 +57,20 @@ public class EnemyFinishTrigger : MonoBehaviour
         // Если мы прошли весь список тегов и не нашли совпадения,
         // значит вошедший объект - не враг (например, пуля или декорация)
         // Ничего не происходит - просто игнорируем его.
+    }
+
+    private void TryToApplyDamageToCastle(GameObject enemyGameObject)
+    {
+        if (!_castle.TryGetComponent(out DestroyableEntity castleEntity))
+            return;
+
+        if (!castleEntity.IsAlive())
+            return;
+
+        if (!enemyGameObject.TryGetComponent(out EnemyBehaviour enemyBehaviour))
+            return;
+
+        float damage = enemyBehaviour.GetCastleDamage();
+        castleEntity.TakeDamage(damage);
     }
 }

@@ -1945,6 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa15fee3286e784f8acc9fa60f0cf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehaviour
+  _castleDamage: 100
   _movementSpeed: 3
   _rotationSpeed: 3
   _arrivalDistance: 0.2
@@ -1988,6 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0947016c09ab44782c2af84265e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyableEntity
+  <Name>k__BackingField: "\u0421\u043D\u0435\u0433\u043E\u0432\u0438\u043A"
   _defaultHealth: 100
   _maxHealth: 100
   _destroyAnimatorTriggerName: Destroy

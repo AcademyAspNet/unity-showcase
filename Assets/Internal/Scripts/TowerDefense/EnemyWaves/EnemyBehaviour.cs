@@ -4,6 +4,11 @@ using UnityEngine;
 // Отвечает за движение по пути, повороты и переход между точками
 public class EnemyBehaviour : MonoBehaviour
 {
+    [Header("Enemy Settings")]
+
+    [SerializeField]
+    private float _castleDamage = 100f;
+
     // === НАСТРОЙКИ ДВИЖЕНИЯ ===
     // Эти параметры можно менять в Inspector для разных типов врагов
 
@@ -33,6 +38,11 @@ public class EnemyBehaviour : MonoBehaviour
     public void SetTargetWaypoint(Waypoint targetWaypoint)
     {
         _targetWaypoint = targetWaypoint;
+    }
+
+    public float GetCastleDamage()
+    {
+        return _castleDamage;
     }
 
     private void Awake()
